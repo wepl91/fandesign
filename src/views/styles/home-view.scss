@@ -1,0 +1,39 @@
+@import "../../components/home-menu/styles.scss";
+
+.home-view {
+  padding-top: 75px;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  .p-card {
+    background: linear-gradient(
+      90deg,
+      rgba(252, 227, 252, 1) 0%,
+      rgba(251, 193, 255, 1) 19%,
+      rgba(255, 239, 254, 1) 100%
+    );
+    box-shadow: 4px 6px 5px 0px rgba(224, 206, 224, 1);
+    width: 70%;
+    margin-left: 15%;
+    .p-card-body {
+      height: 200px;
+      position: relative;
+      padding: 2em;
+      .p-card-content {
+        text-align: left;
+        img {
+          height: 150px;
+          width: 150px;
+          position: absolute;
+          right: 25px;
+          top: 25px;
+        }
+      }
+      h1 {
+        font-family: "Open Sans";
+        font-size: 36px;
+        text-align: left;
+      }
+    }
+  }
+}
