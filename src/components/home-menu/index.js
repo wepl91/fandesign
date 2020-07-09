@@ -2,30 +2,35 @@ import React, { Component } from "react";
 import { Menubar } from "primereact/menubar";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
+import { withRouter } from "react-router-dom";
 
-export class HomeMenu extends Component {
+class HomeMenu extends Component {
   constructor(props) {
     super(props);
     this.items = [
       {
-        label: "File",
-        icon: "pi pi-fw pi-file",
+        label: 'Contacto',
+        icon: 'pi pi-users',
+        command: () => props.history.push('contact')
       },
       {
-        label: "Edit",
-        icon: "pi pi-fw pi-pencil",
+        label: 'Redes sociales',
+        icon: 'pi pi-share-alt',
+        items: [
+          {
+            label: 'Instagram',
+            command: () => {},
+          },
+          {
+            label: 'Facebook',
+            command: () => {},
+          },
+        ]
       },
       {
-        label: "Users",
-        icon: "pi pi-fw pi-user",
-      },
-      {
-        label: "Events",
-        icon: "pi pi-fw pi-calendar",
-      },
-      {
-        label: "Quit",
-        icon: "pi pi-fw pi-power-off",
+        label: "Tu cuadro",
+        icon: "pi pi-shopping-cart",
+        command: () => props.history.push('your-painting')
       },
     ];
   }
@@ -33,9 +38,7 @@ export class HomeMenu extends Component {
   render() {
     return (
       <Menubar model={this.items}>
-        <InputText placeholder="Search" type="text" />
         <Button
-          label="Logout"
           icon="pi pi-power-off"
           style={{ marginLeft: 4 }}
         />
@@ -44,4 +47,4 @@ export class HomeMenu extends Component {
   }
 }
 
-export default HomeMenu;
+export default withRouter(HomeMenu);
