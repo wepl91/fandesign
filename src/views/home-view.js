@@ -8,6 +8,7 @@ class HomeView extends React.Component {
       "https://http2.mlstatic.com/10-cuadros-marco-madera-para-foto-polaroid-60x40-mayorista-D_NQ_NP_779595-MLA27284722840_052018-F.jpg";
     return (
       <div className="home-view">
+        <h1>Inicio</h1>
         <Card>
           <h1>Fandesign</h1>
           <p>Texto random, texto random, texto random, texto random</p>

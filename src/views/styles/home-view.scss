@@ -1,11 +1,14 @@
 @import "../../components/home-menu/styles.scss";
 
 .home-view {
-  padding-top: 75px;
-  width: 100vw;
-  height: 100vh;
+  padding: 45px 40px 45px 40px;
+  width: 85vw;
   position: relative;
-  .p-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .ant-card {
+    margin-top: 24px;
     background: linear-gradient(
       90deg,
       rgba(252, 227, 252, 1) 0%,
@@ -14,21 +17,20 @@
     );
     box-shadow: 4px 6px 5px 0px rgba(224, 206, 224, 1);
     width: 70%;
-    margin-left: 15%;
-    .p-card-body {
+    .ant-card-body {
       height: 200px;
       position: relative;
       padding: 2em;
-      .p-card-content {
-        text-align: left;
-        img {
-          height: 150px;
-          width: 150px;
-          position: absolute;
-          right: 25px;
-          top: 25px;
-        }
+      text-align: left;
+      
+      img {
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        right: 25px;
+        top: 25px;
       }
+      
       h1 {
         font-family: "Open Sans";
         font-size: 36px;

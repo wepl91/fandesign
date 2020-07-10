@@ -8,6 +8,7 @@ import {
   FacebookOutlined,
   MenuOutlined,
   MenuFoldOutlined,
+  HomeOutlined
 } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
@@ -16,20 +17,23 @@ class HomeMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: null,
       collapsed: true,
       menuFixed: false,
     }
   }
 
   selectOption(e) {
+    const { history } = this.props;
     if (e.key === 'your-painting') {
-      this.props.history.push('your-painting');
+      history.push('your-painting');
     }
     if (e.key === 'menu-fix') {
       this.setState(prevState => ({
         menuFixed: !prevState.menuFixed,
       }))
+    }
+    if (e.key === 'home') {
+      history.push('home');
     }
   }
 
@@ -40,7 +44,7 @@ class HomeMenu extends Component {
       this.setState({
         collapsed: false,
       })
-    }, 200);
+    }, 700);
   }
 
   onMouseOff() {
@@ -50,11 +54,11 @@ class HomeMenu extends Component {
       this.setState({
         collapsed: true,
       })
-    }, 200);
+    }, 500);
   }
 
   render() {
-    const { current, menuFixed } = this.state;
+    const { menuFixed } = this.state;
     return (
       <div 
         className="menu-container" 
@@ -63,11 +67,11 @@ class HomeMenu extends Component {
         >
         <Menu 
           onClick={(e) => this.selectOption(e)} 
-          selectedKeys={[current]} 
           mode="inline"
           inlineCollapsed={this.state.collapsed}
         >
           <Menu.Item key="menu-fix" icon={menuFixed ? <MenuFoldOutlined /> : <MenuOutlined />} />
+          <Menu.Item key="home" icon={<HomeOutlined />}>Home</Menu.Item>
           <SubMenu icon={<ShareAltOutlined />} title="Redes sociales">
             <Menu.ItemGroup title="">
               <Menu.Item key="facebook" icon={<FacebookOutlined />}>Facebook</Menu.Item>
