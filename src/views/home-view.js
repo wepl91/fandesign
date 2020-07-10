@@ -1,8 +1,6 @@
 import React from "react";
+import { Card } from 'antd';
 
-import { Card } from "primereact/card";
-
-import HomeMenu from "../components/home-menu";
 
 class HomeView extends React.Component {
   render() {

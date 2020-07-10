@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import HomeRouter from "./home-router";
 import YourPaintingRouter from './your-painting-router';
 import HomeMenu from '../components/home-menu';
-
+import { Row, Col } from 'antd';
 class AppRouter extends Component {
   constructor(props) {
     super(props);
@@ -19,9 +19,15 @@ class AppRouter extends Component {
     if (true) {
       return (
         <React.Fragment>
-          <HomeMenu />
-          <HomeRouter />
-          <YourPaintingRouter />
+          <Row>
+            <Col>
+              <HomeMenu />
+            </Col>
+            <Col>
+              <HomeRouter />
+              <YourPaintingRouter />
+            </Col>
+          </Row>
         </React.Fragment>
       );
     } else {

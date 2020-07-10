@@ -1,7 +1,25 @@
+@import '../../components/picture-box/styles.scss';
+
 .your-painting-view {
-  padding-top: 45px;
-  padding-left: 40px;
+  padding: 45px 40px 45px 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  .ant-row {
+      .painting-firs-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .ant-radio-group {
+          margin-top: 24px;
+          margin-bottom: 36px;
+        }
+        .size-radiogroup {
+          position: absolute;
+          top: 10%;
+          right: -15%;
+        }
+      }
+  }
 }

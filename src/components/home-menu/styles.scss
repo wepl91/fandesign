@@ -1,9 +1,5 @@
-.p-menubar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  .p-menubar-root-list {
-    position: absolute;
-    left: 0;
+.menu-container {
+  .ant-menu {
+    height: 100vh;
   }
 }
