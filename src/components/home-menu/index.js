@@ -16,10 +16,6 @@ const { SubMenu } = Menu;
 class HomeMenu extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      collapsed: true,
-      menuFixed: false,
-    }
   }
 
   selectOption(e) {
@@ -37,40 +33,16 @@ class HomeMenu extends Component {
     }
   }
 
-  onMouseOn() {
-    const { menuFixed } = this.state;
-    if (menuFixed) return;
-    setTimeout(() => {
-      this.setState({
-        collapsed: false,
-      })
-    }, 700);
-  }
-
-  onMouseOff() {
-    const { menuFixed } = this.state;
-    if (menuFixed) return;
-    setTimeout(() => {
-      this.setState({
-        collapsed: true,
-      })
-    }, 500);
-  }
 
   render() {
-    const { menuFixed } = this.state;
     return (
       <div 
-        className="menu-container" 
-        onMouseEnter={() => this.onMouseOn()}
-        onMouseLeave={() => this.onMouseOff()}
-        >
+        className="menu-container" >
         <Menu 
           onClick={(e) => this.selectOption(e)} 
           mode="inline"
-          inlineCollapsed={this.state.collapsed}
+          inlineCollapsed
         >
-          <Menu.Item key="menu-fix" icon={menuFixed ? <MenuFoldOutlined /> : <MenuOutlined />} />
           <Menu.Item key="home" icon={<HomeOutlined />}>Home</Menu.Item>
           <SubMenu icon={<ShareAltOutlined />} title="Redes sociales">
             <Menu.ItemGroup title="">

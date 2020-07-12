@@ -1,5 +1,19 @@
 .menu-container {
   .ant-menu {
     height: 100vh;
+    position: fixed;
+    z-index: 99;
+    padding-top: 2.5em;
+    width: 4em;
+    .ant-menu-item {
+      padding: 0 0 0 1.5em;
+    }
+
+    .ant-menu-submenu {
+      .ant-menu-submenu-title {
+        width: 4em;
+        padding: 0 0 0 1.5em;
+      }
+    }
   }
 }

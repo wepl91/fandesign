@@ -1,8 +1,17 @@
 .picture-box {
-  &.outer-box {
+  margin-top: 24px;
+  position: relative;
+
+  .rope {
+    position: absolute;
+    left: 40px;
+    border-top: solid 2px #CCB28D;
+  }
+
+  &__outer-box {
     border: solid 1px;
   }
-  &.inner-box {
+  &__inner-box {
     border: solid 1px;
   }
 }

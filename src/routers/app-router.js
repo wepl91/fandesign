@@ -24,8 +24,10 @@ class AppRouter extends Component {
               <HomeMenu />
             </Col>
             <Col>
-              <HomeRouter />
-              <YourPaintingRouter />
+              <div className="layout">
+                <HomeRouter />
+                <YourPaintingRouter />
+              </div>
             </Col>
           </Row>
         </React.Fragment>

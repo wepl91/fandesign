@@ -1,11 +1,25 @@
 @import '../../components/picture-box/styles.scss';
 
+@import '../../components/steps/configuration-selection/styles.scss';
+@import '../../components/steps/color-selection/styles.scss';
+
 .your-painting-view {
-  padding: 45px 40px 45px 40px;
+  padding: 2em 2em 2em 7em;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 85vw;
+  .steps-buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 5vh;
+    width: 90vw;
+  }
+  .ant-typography {
+    margin-bottom: 16px;
+  }
   .ant-space {
     height: 80vh;
     width: 100%;
@@ -17,10 +31,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        .ant-radio-group {
-          margin-top: 24px;
-          margin-bottom: 36px;
-        }
         .size-radiogroup {
           position: absolute;
           top: 10%;
