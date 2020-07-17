@@ -6,8 +6,7 @@ import {
   PictureOutlined,
   InstagramOutlined,
   FacebookOutlined,
-  MenuOutlined,
-  MenuFoldOutlined,
+  SettingOutlined,
   HomeOutlined
 } from '@ant-design/icons';
 
@@ -31,6 +30,9 @@ class HomeMenu extends Component {
     if (e.key === 'home') {
       history.push('home');
     }
+    if (e.key === 'admin') {
+      history.push('/app/admin');
+    }
   }
 
 
@@ -51,6 +53,7 @@ class HomeMenu extends Component {
             </Menu.ItemGroup>
           </SubMenu>
           <Menu.Item key="your-painting" icon={<PictureOutlined />}>Tu cuadro</Menu.Item>
+          <Menu.Item key="admin" icon={<SettingOutlined />}>Administración</Menu.Item>
       </Menu>
       </div>);
   }

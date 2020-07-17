@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Switch, Redirect } from "react-router-dom";
 import { withRouter } from "react-router";
+import { Row, Col } from 'antd';
+
+import HomeMenu from '../components/home-menu';
+import AdminRouter from './admin-router';
 import HomeRouter from "./home-router";
 import YourPaintingRouter from './your-painting-router';
-import HomeMenu from '../components/home-menu';
-import { Row, Col } from 'antd';
 class AppRouter extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,7 @@ class AppRouter extends Component {
             <Col>
               <div className="layout">
                 <HomeRouter />
+                <AdminRouter />
                 <YourPaintingRouter />
               </div>
             </Col>
