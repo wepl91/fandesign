@@ -3,7 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import { withRouter } from "react-router";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import AdminConfigurationView from '../views/admin-configurations-view';
+import AdminConfigurationsView from '../views/admin-configurations-list';
+import AdminConfigurationEdit from '../views/admin-configurations-edit';
 import AdminView from '../views/admin-view';
 import AdminImagesView from '../views/admin-images-view';
 
@@ -11,7 +12,6 @@ class AdminRouter extends Component {
   render() {
     const path = this.props.match.path;
     const location = this.props.location;
-    debugger
     return (
       <TransitionGroup className="transition-group">
         <CSSTransition
@@ -22,7 +22,9 @@ class AdminRouter extends Component {
           <section className="transition-wrapper">
             <Switch location={location}>
               <Route path={`${path}/admin/images`} component={AdminImagesView} />
-              <Route path={`${path}/admin/configurations`} component={AdminConfigurationView} />
+              <Route path={`${path}/admin/configurations/new`} component={AdminConfigurationEdit} />
+              <Route path={`${path}/admin/configurations/:id`} component={AdminConfigurationEdit} />
+              <Route path={`${path}/admin/configurations`} component={AdminConfigurationsView} />
               <Route path={`${path}/admin`} component={AdminView} />
             </Switch>
           </section>

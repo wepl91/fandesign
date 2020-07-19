@@ -20,15 +20,15 @@ class AdminView extends Component {
       {
         key: 'Configuraciones',
         img: <ConfigLogo style={ this.picStyles } />,
-        route: 'admin/configurations'
+        route: '/app/admin/configurations'
       }, {
         key: 'Fotos clientes ',
         img: <CustomersLogo style={ this.picStyles } />,
-        route: 'admin/images/customers',
+        route: '/app/admin/images/customers',
       }, {
         key: 'Imagenes para cuadros',
         img: <PictureLogo style={ this.picStyles } />,
-        route: 'admin/images',
+        route: '/app/admin/images',
       }
     ]
   }

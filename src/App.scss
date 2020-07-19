@@ -1,7 +1,8 @@
 @import "./views/styles/home-view.scss";
 @import './views/styles/your-painting-view.scss';
 @import './views/styles/admin-view.scss';
-@import './views/styles/admin-configurations-view.scss';
+@import './views/styles/admin-configurations-list.scss';
+@import './views/styles/admin-configuration-edit.scss';
 
 @import '../src/components/home-menu/styles.scss';
 .App {

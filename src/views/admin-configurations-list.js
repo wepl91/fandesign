@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 import { Table, Button, Typography } from 'antd';
-import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons';
+
+import { withRouter } from "react-router-dom";
 
 import Loader from '../components/loader';
 import { getAllConfigurations } from '../services/configurations';
@@ -10,7 +12,7 @@ import { capitalize } from 'lodash';
 
 const { Text } = Typography;
 
-class AdminConfigurationView extends Component {
+class AdminConfigurationsList extends Component {
   constructor(props) {
     super(props);
     this.tableHeaders = [
@@ -57,12 +59,7 @@ class AdminConfigurationView extends Component {
             <Button
               type="link" 
               icon={<EditOutlined />}
-              onClick={() => {
-                this.setState({
-                  docToEdit:record,
-                  editDoc: true,
-                })
-              }} 
+              onClick={() => this.props.history.push(`/app/admin/configurations/${record.id}`)} 
             />
             <Button 
               type="link" 
@@ -82,8 +79,6 @@ class AdminConfigurationView extends Component {
       isLoading: true,
       data: null,
       docToDelete: null,
-      docToEdit: null,
-      editDoc: false,
       deleteDoc: false,
     };
   }
@@ -112,14 +107,21 @@ class AdminConfigurationView extends Component {
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, newConfig } = this.state;
     return(
       <div className="admin-configurations-view">
         <h1>Administración</h1>
         <Text>Configuraciones</Text>
+        <Button 
+          className="add-configuration" 
+          type="primary" 
+          icon={<PlusOutlined />} 
+          disabled={isLoading}
+          onClick={() => this.props.history.push('/app/admin/configurations/new')}
+        >Nueva configuración</Button>
         { isLoading ?  <Loader /> : this.renderTable()}
       </div>)
   }
 }
 
-export default AdminConfigurationView;
+export default withRouter(AdminConfigurationsList);

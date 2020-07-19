@@ -1,6 +1,7 @@
 @import '../../components/loader/styles.scss';
 
-.admin-configurations-view {
+.admin-configuration-edit {
+  position: relative;
   padding: 2em 2em 2em 7em;
   height: 100vh;
   width: 98vw;
@@ -10,7 +11,11 @@
   .ant-typography {
     margin-bottom: 16px;
   }
-  .ant-table-wrapper {
-    width: 100%;
+  .form {
+    width: 100%
+  }
+
+  .save-button {
+    margin-top: 3em;
   }
 }
