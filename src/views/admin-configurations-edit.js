@@ -102,14 +102,15 @@ class AdminConfigurationEdit extends Component {
       this.setState({
         isLoading: false,
       });
+    } else {
+      getConfiguration(docId)
+        .then((response) => {
+          this.setState({
+            currentConfiguration: response,
+            isLoading: false,
+          });
+        });
     }
-    getConfiguration(docId)
-      .then((response) => {
-        this.setState({
-          currentConfiguration: response,
-          isLoading: false,
-        })
-      })
   }
 
   renderLoader() {
